@@ -119,7 +119,48 @@ eksctl delete cluster -f cluster.yml
 
 images/ – All AWS Console and kubectl screenshots referenced below
 
-High-level views (cluster, nodes, nodegroups, workloads, outputs):
+## 📸 Screenshot Details
+
+### 1️⃣ EKS worker nodes are Ready
+`kubectl get nodes` output showing all worker nodes in the EKS cluster in **Ready** state.
+![EKS worker nodes](images/all-nodes.PNG)
+
+### 2️⃣ EKS cluster in AWS console
+AWS EKS console showing the **s3cluster** / **s2cluster** running in `ap-south-1`.
+![EKS cluster overview](images/s2cluster.PNG)
+
+### 3️⃣ Cluster list view
+AWS EKS console listing clusters and their Kubernetes version and status.
+![AWS EKS clusters](images/aws-cluster.PNG)
+
+### 4️⃣ EC2 instances for node groups
+EC2 console showing all worker node instances created for node groups `ng1`, `ng2`, and `ng3`.
+![EC2 instances](images/instances.PNG)
+
+### 5️⃣ eksctl create cluster output
+`eksctl` CLI output confirming control plane creation, nodegroups becoming ready, and the cluster status as ready.
+![eksctl output](images/output2.PNG)
+
+### 6️⃣ Kustomize config
+`kustomization.yml` definition that generates the `mysql-pass` secret and applies `mysql.yaml` and `wordpress.yaml`.
+![Kustomization config](images/kustomization.PNG)
+
+### 7️⃣ WordPress install page
+Public LoadBalancer URL opening the initial WordPress **language selection / install** screen.
+![WordPress install](images/wordpress1.PNG)
+
+### 8️⃣ WordPress admin dashboard
+WordPress **wp-admin** dashboard after successful install, backed by MySQL running inside the EKS cluster.
+![WordPress dashboard](images/wordpress3.PNG)
+
+### 9️⃣ Prometheus metrics
+Prometheus UI graphing container CPU metrics for workloads running on the EKS cluster.
+![Prometheus metrics](images/prom2.PNG)
+
+### 🔟 Cluster cleanup
+AWS EKS console showing **no clusters**, confirming the EKS cluster was deleted successfully.
+![Cluster deleted](images/update.PNG)
+
 
 
 
